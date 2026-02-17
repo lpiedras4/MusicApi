@@ -5,12 +5,12 @@ public class Artista {
 
     private String id; // no mandar en request, si regresar en response
     private String nombre;
-    private Boolean solitsta; // true: solista, false: grupo
+    private Boolean solista; // true: solista, false: grupo
     private String generoPrincipal;
 
-    public Artista(String nombre, Boolean solitsta, String generoPrincipal) {
+    public Artista(String nombre, Boolean solista, String generoPrincipal) {
         this.nombre = nombre;
-        this.solitsta = solitsta;
+        this.solista = solista;
         this.generoPrincipal = generoPrincipal;
     }
 
@@ -33,11 +33,11 @@ public class Artista {
     }
 
     public Boolean getSolitsta() {
-        return solitsta;
+        return solista;
     }
 
     public void setSolitsta(Boolean solitsta) {
-        this.solitsta = solitsta;
+        this.solista = solitsta;
     }
 
     public String getGeneroPrincipal() {
