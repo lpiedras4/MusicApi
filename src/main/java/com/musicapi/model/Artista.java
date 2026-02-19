@@ -2,8 +2,6 @@ package com.musicapi.model;
 
 
 public class Artista {
-
-    private String id; // no mandar en request, si regresar en response
     private String nombre;
     private Boolean solista; // true: solista, false: grupo
     private String generoPrincipal;

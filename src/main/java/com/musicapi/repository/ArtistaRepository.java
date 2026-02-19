@@ -1,10 +1,12 @@
 package com.musicapi.repository;
 
 import com.musicapi.model.Artista;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ArtistaRepository {
     /*
     Inicialización de lista de artistas
@@ -20,6 +22,12 @@ public class ArtistaRepository {
         id++;
         return artista;
     }
+    public List<Artista>getArtistas(){
+        return artistas;
+    }
+
+
+
 
 
 
