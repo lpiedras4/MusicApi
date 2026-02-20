@@ -2,14 +2,18 @@ package com.musicapi.repository;
 
 import com.musicapi.model.Artista;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Service
 public class ArtistaRepository {
     /*
     Inicialización de lista de artistas
+     */
+    /*
+    Aquí van las operaciones CRUD
      */
     private long id = 1;
     private final List<Artista> artistas = new ArrayList<>();
