@@ -26,22 +26,30 @@ public class ArtistaController {
     Primer endpoint que muestra todos los artistas
      */
     @GetMapping public ResponseEntity<List<Artista>> getArtistas(){ //Ver todos los artistas
-        List<Artista> artistas = artistaService.getArtistas();
-        return new ResponseEntity<>(artistas, HttpStatus.OK);
+        return new ResponseEntity<>(artistaService.getArtistas(), HttpStatus.OK);
     }
+
+    //Endpoint para mostrar un artista específico por su artistaId
+    @GetMapping("artistas/{artistaId}") public ResponseEntity<Artista> buscarArtista(@PathVariable int artistaId){
+        //artistaRepository.buscarArtista(artistaId);
+        return new ResponseEntity<>(artistaService.getArtistas().get(artistaId),HttpStatus.OK );
+    }
+
+
     //Endpoint que actualiza un artista
-    @PutMapping ({"artistaId"})public String actualizarArtista(Artista artista){
+    @PutMapping ({"artistas/{artistaId}"})public String actualizarArtista(Artista artista){
         return "Artista actualizado";
     }
 
 
     //Endpoint que borra un artista
-    @DeleteMapping({"artistaId"}) public String borrarArtista(@PathVariable Long artistaId){
+    @DeleteMapping({"artistas/{artistaId}"}) public String borrarArtista(@PathVariable Long artistaId){
         return "Artista eliminado";
     }
 
     //Endpoint que guarda un nuevo artista
     @PostMapping public ResponseEntity<String> guardarArtista(@RequestBody Artista artista){
+        artistaRepository.guardarArtista(artista);
         return new ResponseEntity<>("Artista guardado: " + artista.getNombre(),HttpStatus.CREATED);
     }
 

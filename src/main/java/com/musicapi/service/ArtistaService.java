@@ -21,7 +21,7 @@ public class ArtistaService {
     Obtiene todos los artistas
      */
     public List<Artista> getArtistas(){
-        return artistaRepository.getArtistas();
+        return artistaRepository.verArtistas();
     }
 
 }

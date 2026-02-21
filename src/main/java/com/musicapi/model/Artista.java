@@ -12,13 +12,13 @@ public class Artista {
         this.generoPrincipal = generoPrincipal;
     }
 
-    private Long artistaId; // no se manda en el request, se genera al guardar
+    private int artistaId; // no se manda en el request, se genera al guardar
 
-    public Long getArtistaId() {
+    public int getArtistaId() {
         return artistaId;
     }
 
-    public void setArtistaId(Long artistaId) {
+    public void setArtistaId(int artistaId) {
         this.artistaId = artistaId;
     }
 
