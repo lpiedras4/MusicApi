@@ -24,4 +24,10 @@ public class ArtistaService {
         return artistaRepository.verArtistas();
     }
 
+    public Artista get(int artistaId){
+        artistaId--;
+        return artistaRepository.buscarArtista(artistaId);
+    }
+
+
 }

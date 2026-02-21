@@ -28,15 +28,14 @@ public class ArtistaRepository {
         id++;
         return artista;
     }
-/*
 
 
-    public Artista buscarArtista(@PathVariable int artistaId){
 
-        return ;
+    public Artista buscarArtista(int artistaId){
+        return artistas.get(artistaId);
     }
 
- */
+
 
     public List<Artista>verArtistas(){
         return artistas;

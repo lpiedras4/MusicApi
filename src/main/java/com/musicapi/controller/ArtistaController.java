@@ -30,14 +30,13 @@ public class ArtistaController {
     }
 
     //Endpoint para mostrar un artista específico por su artistaId
-    @GetMapping("artistas/{artistaId}") public ResponseEntity<Artista> buscarArtista(@PathVariable int artistaId){
-        //artistaRepository.buscarArtista(artistaId);
-        return new ResponseEntity<>(artistaService.getArtistas().get(artistaId),HttpStatus.OK );
+    @GetMapping("/{artistaId}") public ResponseEntity<Artista> buscarArtista(@PathVariable int artistaId){
+        return new ResponseEntity<>(artistaService.get(artistaId),HttpStatus.OK );
     }
 
 
     //Endpoint que actualiza un artista
-    @PutMapping ({"artistas/{artistaId}"})public String actualizarArtista(Artista artista){
+    @PutMapping ({"/{artistaId}"})public String actualizarArtista(Artista artista){
         return "Artista actualizado";
     }
 
