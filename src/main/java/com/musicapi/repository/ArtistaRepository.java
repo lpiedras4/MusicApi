@@ -41,8 +41,9 @@ public class ArtistaRepository {
         return artistas;
     }
 
-    public void borrarArtista(int artistaId){
-
+    public Artista borrarArtista(int artistaId){
+    artistas.remove(artistaId);
+    return artistas.get(artistaId);
     }
 
     public void actualizarArtista(){

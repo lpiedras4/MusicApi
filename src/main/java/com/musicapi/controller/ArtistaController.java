@@ -29,6 +29,12 @@ public class ArtistaController {
         return new ResponseEntity<>(artistaService.getArtistas(), HttpStatus.OK);
     }
 
+    //Endpoint que guarda un nuevo artista
+    @PostMapping public ResponseEntity<String> guardarArtista(@RequestBody Artista artista){
+        artistaRepository.guardarArtista(artista);
+        return new ResponseEntity<>("Artista guardado: " + artista.getNombre(),HttpStatus.CREATED);
+    }
+
     //Endpoint para mostrar un artista específico por su artistaId
     @GetMapping("/{artistaId}") public ResponseEntity<Artista> buscarArtista(@PathVariable int artistaId){
         return new ResponseEntity<>(artistaService.get(artistaId),HttpStatus.OK );
@@ -42,15 +48,13 @@ public class ArtistaController {
 
 
     //Endpoint que borra un artista
-    @DeleteMapping({"artistas/{artistaId}"}) public String borrarArtista(@PathVariable Long artistaId){
-        return "Artista eliminado";
+    @DeleteMapping({"/{artistaId}"}) public ResponseEntity<String> borrarArtista(@PathVariable int artistaId){;
+        Artista eliminado = artistaService.get(artistaId);
+        artistaService.borrarArtista(artistaId);
+      return new ResponseEntity<>("Artista eliminado: " + eliminado.getNombre(),HttpStatus.ACCEPTED);
     }
 
-    //Endpoint que guarda un nuevo artista
-    @PostMapping public ResponseEntity<String> guardarArtista(@RequestBody Artista artista){
-        artistaRepository.guardarArtista(artista);
-        return new ResponseEntity<>("Artista guardado: " + artista.getNombre(),HttpStatus.CREATED);
-    }
+
 
 
 

@@ -24,6 +24,11 @@ public class ArtistaService {
         return artistaRepository.verArtistas();
     }
 
+    public Artista borrarArtista(int artistaId){
+        artistaId--;
+        return artistaRepository.borrarArtista(artistaId);
+    }
+
     public Artista get(int artistaId){
         artistaId--;
         return artistaRepository.buscarArtista(artistaId);
